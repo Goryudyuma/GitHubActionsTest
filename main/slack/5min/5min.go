@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"net/http"
+	"time"
 
 	"github.com/davecgh/go-spew/spew"
 )
@@ -19,7 +20,7 @@ func Run(url string) {
 
 	data := Payload{
 		// fill struct
-		Text: "hogehoge",
+		Text: time.Now().String(),
 	}
 	payloadBytes, err := json.Marshal(data)
 	if err != nil {
