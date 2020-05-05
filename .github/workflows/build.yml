@@ -11,9 +11,9 @@ jobs:
 
     steps:
     - name: checkout
-      usas: actions/checkout@v2
-      
+      uses: actions/checkout@v2
+
     - name: build
       run: go build
-      workind-directory: ./main
+      working-directory: ./main
 
