@@ -2,19 +2,22 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/Goryudyuma/GithHubActionsTest/main/actiontype"
 	slack5min "github.com/Goryudyuma/GithHubActionsTest/main/slack/5min"
 )
 
 func readArgument() actiontype.Argument {
-	return actiontype.Argument{}
+	return actiontype.NewArgument(
+		os.Getenv("slack_webhook_url_5min"),
+	)
 }
 
 func main() {
 	args := readArgument()
 
-	slack5min.Run(args.GetSlackWebhookUrl5min())
+	slack5min.Run(args.GetSlackWebhookURL5min())
 
 	fmt.Println("Hello golang!")
 }
