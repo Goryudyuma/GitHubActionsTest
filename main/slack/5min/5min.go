@@ -4,6 +4,8 @@ import (
 	"bytes"
 	"encoding/json"
 	"net/http"
+
+	"github.com/davecgh/go-spew/spew"
 )
 
 // Run slackに通知する
@@ -33,7 +35,8 @@ func Run(url string) {
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		// handle err
+		spew.Dump(err)
+		return
 	}
 	defer resp.Body.Close()
 
