@@ -18,3 +18,5 @@ jobs:
       - name: run
         run: ./main
         working-directory: ./main
+        env:
+          SLACK_WEBHOOK_ULR_5MIN: ${{ secrets.slack_webhook_url_5min }}

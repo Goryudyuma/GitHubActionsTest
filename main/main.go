@@ -10,7 +10,7 @@ import (
 
 func readArgument() actiontype.Argument {
 	return actiontype.NewArgument(
-		os.Getenv("slack_webhook_url_5min"),
+		os.Getenv("SLACK_WEBHOOK_ULR_5MIN"),
 	)
 }
 
