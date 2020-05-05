@@ -3,10 +3,9 @@ package slack5min
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"time"
-
-	"github.com/davecgh/go-spew/spew"
 )
 
 // Run slackに通知する
@@ -37,7 +36,7 @@ func Run(url string) {
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		spew.Dump(err)
+		fmt.Println("error slack request")
 		return
 	}
 	defer resp.Body.Close()
