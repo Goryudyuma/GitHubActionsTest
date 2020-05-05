@@ -18,6 +18,7 @@ func Run(url string) {
 		Text string `json:"text"`
 	}
 
+	time.Local = time.FixedZone("Asia/Tokyo", 9*60*60)
 	data := Payload{
 		// fill struct
 		Text: time.Now().String(),
