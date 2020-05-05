@@ -12,7 +12,8 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: build
-        uses: ./.github/actions/build
+        run: go build
+        working-directory: ./main
       - name: run
         run: ./main
         working-directory: ./main
