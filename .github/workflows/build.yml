@@ -1,0 +1,19 @@
+# ビルドして実行ファイルを作り出す
+
+name: build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      usas: actions/checkout@v2
+      
+    - name: build
+      run: go build
+      workind-directory: ./main
+
