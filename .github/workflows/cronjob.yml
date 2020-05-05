@@ -14,4 +14,5 @@ jobs:
       - name: build
         uses: ./.github/actions/build
       - name: run
-        uses: ./main
+        run: ./main
+        working-directory: ./main
