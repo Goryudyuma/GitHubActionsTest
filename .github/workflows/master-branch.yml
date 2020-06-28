@@ -1,0 +1,21 @@
+name: master branch update
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: build
+      run: go build
+      working-directory: ./main
+    - uses: actions/upload-artifact@v2
+      with:
+        name: main
+        path: main/main
