@@ -9,13 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: build
-        run: go build
-        working-directory: ./main
+      - uses: actions/download-artifact@v2
+        with:
+          name: main
       - name: run
         run: ./main
-        working-directory: ./main
         env:
           SLACK_WEBHOOK_ULR_5MIN: ${{ secrets.slack_webhook_url_5min }}
