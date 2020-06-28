@@ -16,6 +16,8 @@ jobs:
         with:
           workflow: master-branch.yml
           name: main
+      - name: chmod +x
+        run: chmod +x main
       - name: run
         run: ./main
         env:
