@@ -17,7 +17,9 @@ func readArgument() actiontype.Argument {
 func main() {
 	args := readArgument()
 
-	slack5min.Run(args.GetSlackWebhookURL5min())
+	if err := slack5min.Run(args.GetSlackWebhookURL5min()); err != nil {
+		fmt.Errorf("error: %v", err)
+	}
 
 	fmt.Println("Hello golang!")
 }
