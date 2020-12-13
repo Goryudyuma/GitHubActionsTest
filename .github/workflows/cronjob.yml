@@ -22,20 +22,20 @@ jobs:
       - name: download from cronjob.yml
         id: download_2
         uses: dawidd6/action-download-artifact@v2
-        if: steps.download_1.outcome == failure
+        if: steps.download_1.outcome == 'failure'
         continue-on-error: true
         with:
           workflow: cronjob.yml
           name: main
       - name: checkout
         uses: actions/checkout@v2
-        if: steps.download_2.outcome == failure
+        if: steps.download_2.outcome == 'failure'
       - name: build
         run: go build
-        if: steps.download_2.outcome == failure
+        if: steps.download_2.outcome == 'failure'
         working-directory: ./main
       - name: mv
-        if: steps.download_2.outcome == failure
+        if: steps.download_2.outcome == 'failure'
         run: mv main/main ./main2 && rm -r main && mv main2 main
       - name: chmod +x
         run: chmod +x main
@@ -44,7 +44,7 @@ jobs:
         env:
           SLACK_WEBHOOK_ULR_5MIN: ${{ secrets.slack_webhook_url_5min }}
       - uses: actions/upload-artifact@v2
-        if: steps.download_2.outcome == failure
+        if: steps.download_2.outcome == 'failure'
         with:
           name: main
-          path: main  
+          path: main
