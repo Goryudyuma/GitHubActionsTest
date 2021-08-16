@@ -1,0 +1,12 @@
+name: Approve Job
+
+on:
+  pull_request_review:
+    types: [ submitted ]
+
+jobs:
+  check-state:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
