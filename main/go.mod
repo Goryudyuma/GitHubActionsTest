@@ -1,3 +1,3 @@
-module github.com/Goryudyuma/GithHubActionsTest/main
+module github.com/Goryudyuma/GitHubActionsTest/main
 
 go 1.17

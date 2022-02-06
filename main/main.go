@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Goryudyuma/GithHubActionsTest/main/actiontype"
-	slack5min "github.com/Goryudyuma/GithHubActionsTest/main/slack/5min"
+	"github.com/Goryudyuma/GitHubActionsTest/main/actiontype"
+	slack5min "github.com/Goryudyuma/GitHubActionsTest/main/slack/5min"
 )
 
 func readArgument() actiontype.Argument {
