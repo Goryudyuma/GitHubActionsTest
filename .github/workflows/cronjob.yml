@@ -43,7 +43,7 @@ jobs:
         run: ./main
         env:
           SLACK_WEBHOOK_ULR_5MIN: ${{ secrets.slack_webhook_url_5min }}
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: steps.download_2.outcome == 'failure'
         with:
           name: main
