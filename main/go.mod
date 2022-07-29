@@ -1,3 +1,3 @@
 module github.com/Goryudyuma/GitHubActionsTest/main
 
-go 1.17
+go 1.18
