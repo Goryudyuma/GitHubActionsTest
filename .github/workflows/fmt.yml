@@ -13,6 +13,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v3
       - run: go mod tidy -go=1.18
+        working-directory: main
       - uses: dev-hato/actions-diff-pr-management@v0.0.11
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
