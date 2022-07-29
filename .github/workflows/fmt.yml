@@ -12,7 +12,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Set up Go
         uses: actions/setup-go@v3
-      - run: go mod tidy -go="${go_version}"  
+      - run: go mod tidy -go=1.18
       - uses: dev-hato/actions-diff-pr-management@v0.0.11
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
