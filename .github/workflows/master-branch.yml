@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v3
+    - uses: actions/setup-go@v4
+      with:
+        go-version-file: 'main/go.mod'
     - name: build
       run: go build
       working-directory: ./main
