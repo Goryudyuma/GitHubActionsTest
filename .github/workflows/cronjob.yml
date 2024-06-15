@@ -30,7 +30,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
         if: steps.download_2.outcome == 'failure'
-      - uses: actions/setup-go@v4
+      - uses: actions/setup-go@v5
         if: steps.download_2.outcome == 'failure'
         with:
           go-version-file: 'main/go.mod'
