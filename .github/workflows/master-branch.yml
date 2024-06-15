@@ -18,7 +18,7 @@ jobs:
     - name: build
       run: go build
       working-directory: ./main
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: main
         path: main/main
