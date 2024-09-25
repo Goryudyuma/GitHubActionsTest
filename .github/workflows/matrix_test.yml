@@ -23,6 +23,7 @@ jobs:
   b:
     needs:
       - a
+    if: always()
     runs-on: ubuntu-latest
     steps:
       - run: exit 0
