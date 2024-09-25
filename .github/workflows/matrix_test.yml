@@ -11,6 +11,7 @@ jobs:
         run: |
           echo 'colors=[]' >> "$GITHUB_OUTPUT"
   a:
+    if: needs.define-matrix.outputs.colors != '[]'
     needs:
       - define-matrix
     strategy:
