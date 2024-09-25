@@ -3,7 +3,8 @@ on:
 jobs:
   a:
     strategy:
-      matrix: ${{fromJson('[]')}}
+      matrix:
+        a: ${{fromJson('[]')}}
     runs-on: ubuntu-latest
     steps:
       - run: exit 0
