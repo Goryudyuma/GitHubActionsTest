@@ -1,0 +1,15 @@
+on:
+  push:
+jobs:
+  a:
+    strategy:
+      matrix: []
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
+  b:
+    needs:
+      - a
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
