@@ -1,10 +1,19 @@
 on:
   push:
 jobs:
+  define-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      colors: ${{ steps.colors.outputs.colors }}
+    steps:
+      - name: Define Colors
+        id: colors
+        run: |
+          echo 'colors=["red", "green", "blue"]' >> "$GITHUB_OUTPUT"
   a:
     strategy:
       matrix:
-        a: ${{ fromJson('["x"]') }}
+        color: ${{ fromJSON(needs.define-matrix.outputs.colors) }}
     runs-on: ubuntu-latest
     steps:
       - run: exit 0
