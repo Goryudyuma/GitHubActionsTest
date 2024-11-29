@@ -11,14 +11,14 @@ jobs:
     steps:
       - name: download from master-branch.yml
         id: download_1
-        uses: dawidd6/action-download-artifact@bf251b5aa9c2f7eeb574a96ee720e24f801b7c11 # v6
+        uses: dawidd6/action-download-artifact@80620a5d27ce0ae443b965134db88467fc607b43 # v7
         continue-on-error: true
         with:
           workflow: master-branch.yml
           name: main
       - name: download from cronjob.yml
         id: download_2
-        uses: dawidd6/action-download-artifact@bf251b5aa9c2f7eeb574a96ee720e24f801b7c11 # v6
+        uses: dawidd6/action-download-artifact@80620a5d27ce0ae443b965134db88467fc607b43 # v7
         if: steps.download_1.outcome == 'failure'
         continue-on-error: true
         with:
