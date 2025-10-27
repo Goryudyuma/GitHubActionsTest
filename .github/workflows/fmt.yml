@@ -10,7 +10,7 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Set up Go
-        uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+        uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
         with:
           go-version-file: 'main/go.mod'
       - uses: dev-hato/actions-diff-pr-management@bda458eb55c11585595482e3ec7506b05632b5ec # v2.2.1
