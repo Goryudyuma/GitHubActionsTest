@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
         with:
           go-version-file: 'main/go.mod'
-      - uses: dev-hato/actions-diff-pr-management@bda458eb55c11585595482e3ec7506b05632b5ec # v2.2.1
+      - uses: dev-hato/actions-diff-pr-management@9de3de40217217a73ac95f3751d7bfe1c9f23ead # v2.2.3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           repo-name: ${{ github.event.pull_request.head.repo.full_name }}
